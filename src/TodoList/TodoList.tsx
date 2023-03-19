@@ -17,12 +17,12 @@ function TodoList(): JSX.Element {
     setTodo(updatedTodo);
   }
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
-    const input = e.target.value;
-    if (typeof input === 'string') {
-      setNewTodo(input);
-    }
-  }
+  // function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
+  //   const input = e.target.value;
+  //   if (typeof input === 'string') {
+  //     setNewTodo(input);
+  //   }
+  // }
 
   return (
     <div className={css.wrapper}>
@@ -41,7 +41,7 @@ function TodoList(): JSX.Element {
       <ul className={css.list}>
         {todo.map((item: string, index: number) => (
           <li key={index}>
-            {item}
+            {index+1 +"."}{item}
             <button onClick={() => handleDelete(index)}>X</button>
           </li>
         ))}
